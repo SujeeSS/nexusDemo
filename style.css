@@ -84,11 +84,13 @@ body{
 .subnav .dropdown-menu{
   border:1px solid var(--nx-border); border-radius:12px; box-shadow:var(--shadow-md);
   padding:.4rem; margin-top:.4rem;
+  z-index: 1;
 }
 .subnav .dropdown-item{
   border-radius:8px; font-size:.88rem; padding:.5rem .7rem; font-weight:500;
+  z-index: 1;
 }
-.subnav .dropdown-item:hover{background:var(--nx-bg); color:var(--nx-accent-2);}
+.subnav .dropdown-item:hover{background:black; color:var(--nx-accent-2);}
 
 /* ---------- Generic cards ---------- */
 .card-flat{
