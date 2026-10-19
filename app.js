@@ -16,8 +16,8 @@ buildBars('miniBars2', 7, 50);
 
 // ---------- Left / Right business toggle (mock) ----------
 const bizData = {
-  left:  { totalBV:'0', currentBV:'0', active:'0', totalPV:'0', currentPV:'0', inactive:'0' },
-  right: { totalBV:'0', currentBV:'0', active:'0', totalPV:'0', currentPV:'0', inactive:'0' }
+  left:  { totalBV:'1', currentBV:'1', active:'1', totalPV:'0', currentPV:'0', inactive:'0' },
+  right: { totalBV:'1', currentBV:'1', active:'1', totalPV:'0', currentPV:'0', inactive:'0' }
 };
 function switchBiz(btn, side){
   btn.parentElement.querySelectorAll('.seg-btn').forEach(b => b.classList.remove('active'));
