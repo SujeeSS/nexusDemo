@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nexus Dashboard (Demo Clone)</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Top bar -->
+<nav class="navbar-top py-2 px-3 d-flex align-items-center justify-content-between">
+  <div class="d-flex align-items-center gap-2">
+    <div class="brand-mark">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M3 12c4-7 14-7 18 0-4 7-14 7-18 0Z" stroke="#fff" stroke-width="1.6"/></svg>
+    </div>
+    <span class="brand-text">NEXUS</span>
+  </div>
+  <div class="d-flex align-items-center gap-3">
+    <div class="countdown-chip d-none d-sm-flex align-items-center gap-1">
+      <i class="bi bi-clock"></i> <span id="countdown">10H : 10M : 41S</span>
+    </div>
+    <div class="bell-wrap"><i class="bi bi-bell fs-5 text-secondary"></i><span class="bell-dot"></span></div>
+    <div class="dropdown">
+      <button class="btn user-chip d-flex align-items-center gap-2 dropdown-toggle" data-bs-toggle="dropdown">
+        <i class="bi bi-person-circle fs-3 text-secondary"></i>
+        <span class="text-start lh-sm d-none d-sm-block">
+          <span class="d-block fw-semibold small">Kamalesh ganesan</span>
+          <span class="d-block status-pill"><span class="status-dot"></span>InActive</span>
+        </span>
+      </button>
+      <ul class="dropdown-menu dropdown-menu-end">
+        <li><a class="dropdown-item" href="#">View Profile</a></li>
+        <li><a class="dropdown-item" href="#">Change Password</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item text-danger" href="#">Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Sub nav -->
+<nav class="subnav px-3">
+  <ul class="nav">
+    <li class="nav-item"><a class="nav-link active" href="#"><i class="bi bi-speedometer2"></i>Dashboard</a></li>
+    <li class="nav-item dropdown">
+      <!-- <a class=" nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#"><i class="bi bi-bar-chart btn btn-outline-dark"></i>Stakings</a> -->
+      <a class="nav-link dropdown-toggle rounded-4 navs" data-bs-toggle="dropdown" href="#"><i class="bi bi-bar-chart"></i>Stakings</a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">ESP Staking</a></li>
+        <li><a class="dropdown-item" href="#">BVS Staking</a></li>
+        <li><a class="dropdown-item" href="#">Staking History</a></li>
+      </ul>
+    </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle rounded-4 " data-bs-toggle="dropdown" href="#"><i class="bi bi-people"></i>My Team</a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Refer a Friend</a></li>
+        <li><a class="dropdown-item" href="#">Affiliate Link</a></li>
+        <li><a class="dropdown-item" href="#">Sponsor Genealogy</a></li>
+        <li><a class="dropdown-item" href="#">Team Hierarchy</a></li>
+        <li><a class="dropdown-item" href="#">Business Summary</a></li>
+        <li><a class="dropdown-item" href="#">PV Summary</a></li>
+        <li><a class="dropdown-item" href="#">Find Team Business</a></li>
+        <li><a class="dropdown-item" href="#">Team New Decider's Staking</a></li>
+        <li><a class="dropdown-item" href="#">DTB Achievers</a></li>
+      </ul>
+    </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle rounded-4" data-bs-toggle="dropdown" href="#"><i class="bi bi-wallet2"></i>Accounts</a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Statement</a></li>
+        <li><a class="dropdown-item" href="#">Fund Transfer</a></li>
+      </ul>
+    </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle rounded-4" data-bs-toggle="dropdown" href="#"><i class="bi bi-box-arrow-up-right"></i>Withdrawal</a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Withdraw Request</a></li>
+        <li><a class="dropdown-item" href="#">Withdraw History</a></li>
+      </ul>
+    </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle rounded-4" data-bs-toggle="dropdown" href="#"><i class="bi bi-people-fill"></i>Clubs</a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Club Upgrades</a></li>
+        <li><a class="dropdown-item" href="#">Club Details</a></li>
+      </ul>
+    </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle rounded-4" data-bs-toggle="dropdown" href="#"><i class="bi bi-info-circle"></i>Informations</a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Nexus Business PPT</a></li>
+        <li><a class="dropdown-item" href="#">Nexus Brochure</a></li>
+        <li><a class="dropdown-item" href="#">FAQ</a></li>
+        <li><a class="dropdown-item" href="#">Privacy Policy</a></li>
+        <li><a class="dropdown-item" href="#">Terms &amp; Conditions</a></li>
+        <li><a class="dropdown-item" href="#">BVS Plan</a></li>
+        <li><a class="dropdown-item" href="#">ESP Plan</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+<main class="container-fluid p-3" style="max-width:1320px;">
+
+  <!-- Activation notice -->
+  <div class="notice-bar p-2 px-3 mb-3 d-flex justify-content-between align-items-center small" id="noticeBar">
+    <div><i class="bi bi-exclamation-triangle text-warning me-1"></i> You have only <strong class="text-danger">10 day(s)</strong> left to activate your account. Upload your <strong>profile picture</strong> to keep enjoying Nexus benefits.</div>
+    <i class="bi bi-x fs-5 text-muted" style="cursor:pointer;" id="closeNotice"></i>
+  </div>
+
+  <!-- Referral banner -->
+  <div class="banner-refer text-center py-4 mb-3">
+    <h5 class="fw-bold mb-1">Refer friends and earn exciting incentives!</h5>
+    <p class="text-muted small mb-3">Start referring now and earn up to 5% incentive for each referral!</p>
+    <button class="pill-link">Details</button>
+  </div>
+
+  <!-- Club bonus strip -->
+  <div class="card-flat p-2 px-3 mb-3 d-flex align-items-center gap-2 small flex-wrap">
+    <i class="bi bi-megaphone-fill text-warning"></i>
+    <strong>Elite Staking Plan (ESP)</strong> — Rewards up to <span class="text-success fw-bold">302.5%</span>.
+    <a href="#" class="text-decoration-none fw-semibold" style="color:var(--nx-accent-2);">Click Here</a> to stake.
+    <span class="text-muted ms-auto"><i class="bi bi-info-circle me-1"></i>More Info</span>
+  </div>
+
+  <div class="row g-3 mb-3">
+    <!-- Base club -->
+    <div class="col-12 col-lg-3">
+      <div class="card-flat hoverable p-3 h-100 d-flex flex-column justify-content-between">
+        <div>
+          <div class="stat-label">BASE CLUB <i class="bi bi-box-arrow-up-right"></i></div>
+          <div class="stat-value">--</div>
+        </div>
+        <div class="text-center my-2"><i class="bi bi-shield-shaded" style="font-size:3rem; background:var(--nx-accent-grad); -webkit-background-clip:text; background-clip:text; color:transparent;"></i></div>
+        <div>
+          <div class="stat-label">TOTAL CLUB BONUS</div>
+          <div class="stat-value">0</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Total CB + chart -->
+    <div class="col-12 col-lg-6">
+      <div class="card-flat hoverable p-3 h-100">
+        <div class="d-flex justify-content-between flex-wrap gap-3">
+          <div>
+            <div class="stat-label">TOTAL CB <i class="bi bi-box-arrow-up-right"></i></div>
+            <div class="stat-value">0</div>
+            <div class="stat-label mt-3">CURRENT MONTH CB</div>
+            <div class="stat-value">0</div>
+          </div>
+          <div class="text-end">
+            <span class="badge bg-light text-dark border fw-normal">Past 7 Days</span>
+            <div class="mini-bars mt-2" id="miniBars"></div>
+            <div class="d-flex gap-2 small text-muted mt-1">
+              <span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Team club details -->
+    <div class="col-12 col-lg-3">
+      <div class="card-flat hoverable p-3 h-100">
+        <div class="stat-label mb-2">TEAM CLUB DETAILS</div>
+        <div class="d-flex justify-content-between align-items-center mb-2">
+          <span class="icon-chip pink"><i class="bi bi-award-fill"></i></span>
+          <span class="small fw-semibold">Deciders</span>
+          <i class="bi bi-arrow-repeat text-muted"></i>
+          <span class="fw-semibold">--</span>
+        </div>
+        <div class="d-flex justify-content-between align-items-center mb-3">
+          <span class="icon-chip blue"><i class="bi bi-shield-fill-check"></i></span>
+          <span class="small fw-semibold">--</span>
+          <i class="bi bi-arrow-repeat text-muted"></i>
+          <span class="fw-semibold">--</span>
+        </div>
+        <div class="d-flex justify-content-between small">
+          <a href="#" class="text-decoration-none fw-semibold" style="color:var(--nx-accent-2);">Club Upgrades</a>
+          <a href="#" class="text-decoration-none text-muted">View more <i class="bi bi-chevron-down"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row g-3 mb-3">
+    <!-- Business -->
+    <div class="col-12 col-lg-6">
+      <div class="card-flat hoverable p-3 h-100">
+        <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
+          <div class="btn-group" role="group">
+            <button class="seg-btn active px-3 py-1" onclick="switchBiz(this,'left')">My Left Business</button>
+            <button class="seg-btn px-3 py-1" onclick="switchBiz(this,'right')">My Right Business</button>
+          </div>
+          <span class="badge bg-light text-dark border fw-normal">Past 7 days</span>
+        </div>
+        <div class="row text-center g-3">
+          <div class="col-4"><div class="stat-label">TOTAL BV</div><div class="fw-bold fs-5" id="bv-total">0</div></div>
+          <div class="col-4"><div class="stat-label">CURRENT BV</div><div class="fw-bold fs-5" id="bv-current">0</div></div>
+          <div class="col-4"><div class="stat-label" style="color:var(--nx-green-ink);">ACTIVE USERS <i class="bi bi-arrow-repeat"></i></div><div class="fw-bold fs-5" id="bv-active">0</div></div>
+          <div class="col-4"><div class="stat-label">TOTAL PV</div><div class="fw-bold fs-5" id="pv-total">0</div></div>
+          <div class="col-4"><div class="stat-label">CURRENT PV</div><div class="fw-bold fs-5" id="pv-current">0</div></div>
+          <div class="col-4"><div class="stat-label text-danger">INACTIVE USERS <i class="bi bi-arrow-repeat"></i></div><div class="fw-bold fs-5" id="pv-inactive">0</div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Exchange balance -->
+    <div class="col-12 col-lg-6">
+      <div class="card-flat hoverable p-3 h-100">
+        <div class="d-flex gap-2 mb-3 flex-wrap">
+          <div class="balance-tab active">Exchange balance</div>
+          <div class="balance-tab">Earning Balance</div>
+          <div class="balance-tab">Available Balance</div>
+          <div class="balance-tab">Staking Balance</div>
+        </div>
+        <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
+          <div>
+            <div class="stat-label" id="balanceLabel">EXCHANGE BALANCE</div>
+            <div class="stat-value" id="balanceVal">5000</div>
+          </div>
+          <div class="d-flex gap-2">
+            <button class="btn btn-outline-dark btn-sm rounded-3">Load Balance</button>
+            <button class="btn btn-dark btn-sm rounded-3">Transfer</button>
+          </div>
+        </div>
+        <div class="mini-bars mt-3" id="miniBars2" style="height:60px;"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Group incentive row -->
+  <div class="row g-3 mb-3">
+    <div class="col-12 col-lg-6">
+      <div class="card-flat hoverable p-3">
+        <div class="row g-4">
+          <div class="col-6">
+            <div class="stat-label">GROUP INCENTIVE <i class="bi bi-chevron-down"></i></div>
+            <div class="stat-value">200</div>
+            <div class="progress-thin mt-2"><span style="width:200%"></span></div>
+          </div>
+          <div class="col-6">
+            <div class="stat-label">CLUB BONUS <i class="bi bi-chevron-down"></i></div>
+            <div class="stat-value">300</div>
+            <div class="progress-thin mt-2"><span style="width:30%"></span></div>
+          </div>
+          <div class="col-6">
+            <div class="stat-label">CS BONUS <i class="bi bi-chevron-down"></i></div>
+            <div class="stat-value">500</div>
+            <div class="progress-thin mt-2"><span style="width:50%"></span></div>
+          </div>
+          <div class="col-6">
+            <div class="stat-label">TOTAL EARNINGS <i class="bi bi-chevron-down"></i></div>
+            <div class="stat-value">1000</div>
+            <div class="progress-thin mt-2"><span style="width:100%"></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-lg-6">
+      <div class="card-flat hoverable p-3">
+        <div class="row g-4 text-start">
+          <div class="col-4">
+            <span class="icon-chip pink mb-2"><i class="bi bi-award-fill"></i></span>
+            <div class="stat-label mt-2">BVS STAKINGS <i class="bi bi-chevron-right"></i></div>
+            <div class="fw-bold">5000</div>
+          </div>
+          <div class="col-4">
+            <span class="icon-chip blue mb-2"><i class="bi bi-hourglass-split"></i></span>
+            <div class="stat-label mt-2">ESP STAKINGS <i class="bi bi-chevron-right"></i></div>
+            <div class="fw-bold">5000</div>
+          </div>
+          <div class="col-4">
+            <span class="icon-chip green mb-2"><i class="bi bi-award-fill"></i></span>
+            <div class="stat-label mt-2">MY STAKINGS <i class="bi bi-chevron-right"></i></div>
+            <div class="fw-bold">5000</div>
+          </div>
+          <div class="col-4">
+            <span class="icon-chip pink mb-2"><i class="bi bi-award-fill"></i></span>
+            <div class="stat-label mt-2">BVS REWARDS <i class="bi bi-chevron-right"></i></div>
+            <div class="fw-bold">5000</div>
+          </div>
+          <div class="col-4">
+            <span class="icon-chip blue mb-2"><i class="bi bi-hourglass-split"></i></span>
+            <div class="stat-label mt-2">ESP REWARDS <i class="bi bi-chevron-right"></i></div>
+            <div class="fw-bold">5000</div>
+          </div>
+          <div class="col-4">
+            <span class="icon-chip green mb-2"><i class="bi bi-award-fill"></i></span>
+            <div class="stat-label mt-2">TOTAL REWARDS <i class="bi bi-chevron-right"></i></div>
+            <div class="fw-bold">5000</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Login / balance / withdrawal tabs -->
+  <div class="card-flat p-3 mb-4">
+    <ul class="nav gap-2 mb-3" id="bottomTabs">
+      <li class="nav-item"><button class="btn seg-btn active px-3 py-1" data-tab="logins">My Login(s)</button></li>
+      <li class="nav-item"><button class="btn seg-btn px-3 py-1" data-tab="loadbal">Load Balance</button></li>
+      <li class="nav-item"><button class="btn seg-btn px-3 py-1" data-tab="exwithdraw">Exchange Withdrawals</button></li>
+    </ul>
+
+    <div id="tab-logins">
+      <div class="table-responsive">
+        <table class="table align-middle mb-0">
+          <thead><tr><th>Date</th><th>Time</th><th>IP</th></tr></thead>
+          <tbody id="loginRows"></tbody>
+        </table>
+      </div>
+    </div>
+    <div id="tab-loadbal" class="d-none text-muted small py-5 text-center">
+      <i class="bi bi-inbox fs-3 d-block mb-2"></i>No balance load history yet.
+    </div>
+    <div id="tab-exwithdraw" class="d-none text-muted small py-5 text-center">
+      <i class="bi bi-inbox fs-3 d-block mb-2"></i>No exchange withdrawals yet.
+    </div>
+  </div>
+
+</main>
+
+<div class="demo-flag"><i class="bi bi-info-circle me-1"></i>Static demo clone — mock data, no live login</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
